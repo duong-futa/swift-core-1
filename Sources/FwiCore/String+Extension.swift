@@ -104,7 +104,7 @@ public extension String {
     func substring(fromIndex idx: UInt) -> Substring {
         /* Condition validation: Validate end index */
         if idx >= count {
-            Log.debug("Start index must be less than string's length.")
+            //Log.debug("Start index must be less than string's length.")
             return ""
         }
 
@@ -116,7 +116,7 @@ public extension String {
     func substring(toIndex idx: UInt) -> Substring {
         /* Condition validation: Validate end index */
         if idx >= count {
-            Log.debug("End index should be a positive number but less than string's length.")
+            //Log.debug("End index should be a positive number but less than string's length.")
             return ""
         }
 
@@ -132,13 +132,13 @@ public extension String {
     func substring(fromIndex idx: UInt, length l: UInt) -> Substring {
         /* Condition validation: Validate end index */
         if idx >= count {
-            Log.debug("Start index must be less than string's length.")
+            //Log.debug("Start index must be less than string's length.")
             return ""
         }
 
         /* Condition validation: Validate length */
         if (idx + l) < count {
-            Log.debug("Sub string length must less than string's length.")
+            //Log.debug("Sub string length must less than string's length.")
             return ""
         }
 

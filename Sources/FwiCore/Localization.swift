@@ -62,7 +62,7 @@ public final class Localization {
         let languages = bundle.preferredLocalizations
         let next = languages.first.orNil("en")
 
-        Log.info("Current Language: \(next).")
+        //Log.info("Current Language: \(next).")
         guard locale != next else {
             return
         }
