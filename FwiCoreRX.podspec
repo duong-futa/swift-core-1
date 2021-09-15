@@ -11,4 +11,5 @@ Pod::Spec.new do |s|
   s.source_files        = 'Sources/FwiCoreRX/*.*'
   s.dependency 'RxSwift'
   s.dependency 'RxCocoa'
+  s.dependency 'FwiCore', '1.0.0'
 end
