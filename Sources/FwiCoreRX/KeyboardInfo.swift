@@ -41,7 +41,7 @@
         public let hidden: Bool
         public let height: CGFloat
         public let remainHeight: CGFloat
-        public let animationDuration: TimeInterval
+        public let duration: TimeInterval
 
         /// Struct's constructors.
         public init?(_ notification: Notification) {
@@ -49,7 +49,7 @@
                 return nil
             }
 
-            animationDuration = (userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval) ?? 0
+            duration = (userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval) ?? 0
             hidden = (notification.name == UIResponder.keyboardWillHideNotification)
 
             height = hidden ? 0 : ((userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.height ?? 0)
@@ -59,7 +59,7 @@
         // MARK: - Struct's public methods
         public func animate(view: UIView?) {
             if hidden {
-                UIView.animate(withDuration: animationDuration) {
+                UIView.animate(withDuration: duration) {
                     /* Condition validation: check if it is scrollview, then we only need to change inset, otherwise we apply transform */
                     guard let scrollView = view as? UIScrollView else {
                         view?.transform = CGAffineTransform.identity
@@ -92,7 +92,7 @@
                 }
 
                 let transfrom = CGAffineTransform(translationX: 0, y: -h)
-                UIView.animate(withDuration: animationDuration) {
+                UIView.animate(withDuration: duration) {
                     /* Condition validation: check if it is scrollview, then we only need to change inset, otherwise we apply transform */
                     guard let scrollView = view as? UIScrollView else {
                         view?.transform = transfrom
