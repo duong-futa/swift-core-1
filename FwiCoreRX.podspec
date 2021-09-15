@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.platform      = :ios, "10.0"
   s.source       = { :path => '.' }
   s.source_files        = "Sources/FwiCoreRX/*.*"
-  s.dependency = "RxSwift"
-  s.dependency = "RxCocoa"
-  s.dependency = "./Sources/FwiCore"
+  s.dependency = 'RxSwift'
+  s.dependency = 'RxCocoa'
+  s.dependency = 'FwiCore', :path => './Sources'
 end
