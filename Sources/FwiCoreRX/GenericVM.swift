@@ -61,13 +61,13 @@
         }
     }
 
-    extension UITableView: ReuseableProtocol {
+    extension UITableView {
         public func itemSelected<S>(to obsever: S) -> Disposable where S: ObserverType, S.Element == IndexPath {
             return self.rx.itemSelected.subscribe(obsever)
         }
     }
 
-    extension UICollectionView: ReuseableProtocol {
+    extension UICollectionView {
         public func itemSelected<S>(to obsever: S) -> Disposable where S: ObserverType, S.Element == IndexPath {
             return self.rx.itemSelected.subscribe(obsever)
         }
@@ -109,7 +109,7 @@
         }
 
         deinit {
-            Log.debug("")
+//            Log.debug("")
         }
 
         /// Class's public methods.

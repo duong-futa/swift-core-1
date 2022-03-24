@@ -48,7 +48,7 @@ public struct FwiCore {
     public static var debug = false {
         didSet {
             guard debug else { return }
-            Log.consoleLog()
+//            Log.consoleLog()
         }
     }
 
@@ -98,7 +98,7 @@ public struct FwiCore {
         do {
             return try block()
         } catch {
-            Log.error(error, className: className, line: line)
+//            Log.error(error, className: className, line: line)
             omitBlock?(error)
             return `default`()
         }
