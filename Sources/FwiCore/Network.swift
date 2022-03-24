@@ -115,7 +115,7 @@
                     task.cURLDescription { curlString in
                         let separator = "--------------------------------------------------------------------------------"
                         let string = "\n\(separator)\n\(curlString)\n\n[RESPONSE]\n\(r.data?.toString() ?? "")\n\(separator)"
-                        Log.debug(string)
+//                        Log.debug(string)
                     }
                 }
                 c(r.data, r.error, r.response)
